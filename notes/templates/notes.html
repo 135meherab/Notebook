@@ -1,0 +1,23 @@
+{%extends 'base.html'%}
+
+{% block header %}
+    <h1>Notes</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <ul>
+            {% for note in notes%}
+            <li>
+                <h3>
+                    <a href="{% url 'note' note.id %}"> {{note.title}} </a>
+               </h3>
+            </li>
+            {%empty%}
+                <h1>No notes out There</h1>
+            {%endfor%}
+        </ul>
+        <br>
+        <h3> <a href="{% url 'index' %}">Create a new note</a></h3>
+    </div>
+{% endblock %}

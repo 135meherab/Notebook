@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+
+{% block header %}
+    <h1>{{note.title}}</h1>
+{% endblock %}
+
+{% block content %}
+    <div class='container'>
+        <h4><a href="">Add a new Entry</a></h4>
+        <ul>
+            {% for entry in entries %}
+                <div class="card">
+                    <a class="bg-primary-subtle" href="">Update Entry</a>
+                    <div class="card-body">
+                        <h4 class="card-title">{{ entry | linebreaks }}</h4>
+                    </div>
+                </div>
+            {%endfor%}   
+        </ul>
+    </div>
+{% endblock %}
